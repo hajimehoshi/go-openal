@@ -130,16 +130,6 @@ func (self Source) Seti(param int32, value int32) {
 	C.alSourcei(C.ALuint(self), C.ALenum(param), C.ALint(value))
 }
 
-// Renamed, was Source3i.
-func (self Source) Set3i(param int32, value1, value2, value3 int32) {
-	C.alSource3i(C.ALuint(self), C.ALenum(param), C.ALint(value1), C.ALint(value2), C.ALint(value3))
-}
-
-// Renamed, was Sourceiv.
-func (self Source) Setiv(param int32, values []int32) {
-	C.walSourceiv(C.ALuint(self), C.ALenum(param), unsafe.Pointer(&values[0]))
-}
-
 // Renamed, was GetSourcef.
 func (self Source) Getf(param int32) float32 {
 	return float32(C.walGetSourcef(C.ALuint(self), C.ALenum(param)))
@@ -160,13 +150,6 @@ func (self Source) Getfv(param int32, values []float32) {
 // Renamed, was GetSourcei.
 func (self Source) Geti(param int32) int32 {
 	return int32(C.walGetSourcei(C.ALuint(self), C.ALenum(param)))
-}
-
-// Renamed, was GetSource3i.
-func (self Source) Get3i(param int32) (v1, v2, v3 int32) {
-	C.walGetSource3i(C.ALuint(self), C.ALenum(param), unsafe.Pointer(&v1),
-		unsafe.Pointer(&v2), unsafe.Pointer(&v3))
-	return
 }
 
 // Renamed, was GetSourceiv.

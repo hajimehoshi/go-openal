@@ -18,7 +18,7 @@
 // lot higher, each of those calls triggers an allocation.
 package openal
 
-//#cgo linux LDFLAGS: -lopenal
+//#cgo freebsd linux LDFLAGS: -lopenal
 //#cgo darwin LDFLAGS: -framework OpenAL
 //#include <stdlib.h>
 //#include "local.h"

@@ -77,10 +77,6 @@ void walSourcefv(ALuint sid, ALenum param, const void* values) {
 	alSourcefv(sid, param, values);
 }
 
-void walSourceiv(ALuint sid, ALenum param, const void* values) {
-	alSourceiv(sid, param, values);
-}
-
 ALfloat walGetSourcef(ALuint sid, ALenum param) {
 	ALfloat result;
 	alGetSourcef(sid, param, &result);
@@ -99,10 +95,6 @@ ALint walGetSourcei(ALuint sid, ALenum param) {
 	ALint result;
 	alGetSourcei(sid, param, &result);
 	return result;
-}
-
-void walGetSource3i(ALuint sid, ALenum param, void *value1, void *value2, void *value3) {
-	alGetSource3i(sid, param, value1, value2, value3);
 }
 
 void walGetSourceiv(ALuint sid, ALenum param, void* values) {
